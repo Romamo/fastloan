@@ -1,4 +1,4 @@
 openai
-fastapi
+fastapi[standard]
 uvicorn
 -e git+https://github.com/openai/swarm.git#egg=swarm
