@@ -24,10 +24,10 @@ jobs:
           eval "$(pyenv virtualenv-init -)"
           pyenv activate main
           pip install -r requirements.txt
-          ./manage.py collectstatic --noinput
+ #         ./manage.py collectstatic --noinput
       - run: rsync -a --delete --exclude=/.git/ --exclude=/.github/ ./ ~/main/
-      - run: if [ -e /var/run/gunicorn/finderado.pid ]; then kill -HUP `cat /var/run/gunicorn/finderado.pid`; else echo > ~/main/restart.txt; fi
-      - run: if [ -e /home/finderado/data/tgf.pid ]; then kill -HUP `cat /home/finderado/data/tgf.pid`; else echo > ~/main/restart_tgf.txt; fi
+#      - run: if [ -e /var/run/gunicorn/finderado.pid ]; then kill -HUP `cat /var/run/gunicorn/finderado.pid`; else echo > ~/main/restart.txt; fi
+#      - run: if [ -e /home/finderado/data/tgf.pid ]; then kill -HUP `cat /home/finderado/data/tgf.pid`; else echo > ~/main/restart_tgf.txt; fi
 
 #      - run: |
 #          source ~/.venv/main/bin/activate
