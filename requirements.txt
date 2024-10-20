@@ -1,0 +1,4 @@
+openai
+fastapi
+uvicorn
+-e git+ssh://git@github.com/openai/swarm.git

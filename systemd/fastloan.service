@@ -1,0 +1,18 @@
+[Unit]
+Description=fastloan
+After=network.target
+
+[Service]
+User=fastloan
+Group=fastloan
+EnvironmentFile=-/home/fastloan/.env
+EnvironmentFile=-/home/fastloan/main/systemd/fastloan.ini
+WorkingDirectory=/home/fastloan/main
+ExecStart=/bin/sh -c '${PYTHON_BIN} main.py'
+Restart=always
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
