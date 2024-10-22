@@ -7,12 +7,6 @@ from assistant.agents import *
 
 app = FastAPI()
 client = Swarm()
-# agents = Agents()
-#
-# agents = {
-#     "info": InfoAgent(),
-#     "form": FormAgent(),
-# }
 
 # Allow CORS for all origins
 app.add_middleware(
